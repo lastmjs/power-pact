@@ -18,7 +18,7 @@ contract PowerPact {
         stake = msg.value;
         stakerAddress = msg.sender;
         pactStart = now;
-        pactEnd = now + 86400 * 7;
+        pactEnd = now + 3600 * 7;
     }
     
     function setCounterPartyAddress(address _counterPartyAddress) public {
@@ -38,7 +38,7 @@ contract PowerPact {
             return;
         }
         
-        uint dayInSeconds = 86400;
+        uint dayInSeconds = 3600;
         
         if (attestations[0] >= pactStart && attestations[0] < pactStart + dayInSeconds) {
             counterPartyAddress.transfer(stake);
